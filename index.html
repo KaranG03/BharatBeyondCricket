@@ -1,541 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BharatBeyondCricket - Empowering India's Athletes</title>
-    
-    <!-- Google Fonts Import -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Self-contained CSS -->
-    <style>
-        /* --- Global Reset & Variables --- */
-        :root {
-            --primary-color: #FF9933; /* Saffron/Orange */
-            --secondary-color: #138808; /* Green */
-            --dark-blue: #000080; /* Navy Blue */
-            --text-dark: #1a202c; /* Darker text */
-            --text-light: #f7fafc; /* Lighter text */
-            --bg-light: #FFFFFF;
-            --bg-grey: #f9fafb; /* Lighter grey */
-        }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>BharatBeyondCricket - Empowering India's Athletes</title>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-        html {
-            scroll-behavior: smooth;
-        }
+<style>
+:root {
+  --primary-color: #FF9933;
+  --secondary-color: #138808;
+  --dark-blue: #000080;
+  --text-dark: #1a202c;
+  --text-light: #ffffff;
+}
 
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: var(--text-dark);
-            background-color: var(--bg-light);
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            text-rendering: optimizeLegibility;
-        }
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  color: var(--text-dark);
+  background-color: #fff;
+  line-height: 1.6;
+}
 
-        /* --- Utility Classes --- */
-        .container {
-            max-width: 1200px; /* Increased max-width */
-            margin: 0 auto;
-            padding: 0 1.5rem; /* Adjusted padding */
-        }
+/* HEADER */
+#main-header {
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
 
-        section {
-            padding: 6rem 0; /* Increased padding */
-        }
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+}
 
-        h1, h2, h3 {
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-        }
+.logo {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--dark-blue);
+  text-decoration: none;
+}
+.logo span {
+  color: var(--primary-color);
+}
 
-        h1 {
-            font-size: 3.75rem; /* Increased size */
-            color: var(--text-light);
-            font-weight: 800;
-            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); /* Enhanced shadow */
-        }
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 600;
+  position: relative;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: -4px;
+  background: var(--primary-color);
+  transition: width 0.3s ease;
+}
+.nav-links a:hover::after {
+  width: 100%;
+}
 
-        h2 {
-            font-size: 2.75rem; /* Increased size */
-            color: var(--dark-blue);
-            text-align: center;
-            font-weight: 700;
-        }
-        
-        h3 {
-            font-size: 1.5rem;
-            color: var(--dark-blue);
-            font-weight: 600;
-        }
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: var(--dark-blue);
+}
 
-        p {
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-            color: #4a5568; /* Softer text color */
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 0.85rem 2rem; /* Increased padding */
-            text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: 600;
-            border-radius: 50px;
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
+/* HERO */
+#hero {
+  background: 
+    linear-gradient(rgba(0,0,60,0.75), rgba(0,0,60,0.75)),
+    url('https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=1600&q=80')
+    center/cover no-repeat;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: var(--text-light);
+  padding: 0 1.5rem;
+}
 
-        .btn-primary {
-            background-color: var(--primary-color);
-            color: #fff;
-            border: 2px solid var(--primary-color);
-        }
+#hero h1 {
+  font-size: clamp(2rem, 5vw, 3.75rem);
+  text-shadow: 0 3px 10px rgba(0,0,0,0.4);
+}
 
-        .btn-primary:hover {
-            background-color: #e68a2e;
-            border-color: #e68a2e;
-            transform: translateY(-2px);
-            box-shadow: 0 7px 14px rgba(0, 0, 0, 0.1);
-        }
-        
-        .btn-secondary {
-            background-color: transparent;
-            color: #fff;
-            border: 2px solid #fff;
-        }
-        
-        .btn-secondary:hover {
-            background-color: #fff;
-            color: var(--dark-blue);
-            transform: translateY(-2px);
-            box-shadow: 0 7px 14px rgba(0, 0, 0, 0.1);
-        }
+#hero p {
+  font-size: 1.3rem;
+  max-width: 700px;
+  margin: 1.5rem auto 2.5rem;
+  color: rgba(255,255,255,0.9);
+  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+}
 
-        /* --- Header / Navbar --- */
-        #main-header {
-            background: var(--bg-light);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Softer shadow */
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
+.btn {
+  display: inline-block;
+  padding: 0.85rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
 
-        #main-header .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 80px;
-        }
+.btn-primary {
+  background: var(--primary-color);
+  color: #fff;
+}
+.btn-primary:hover {
+  background: #e68a2e;
+  transform: translateY(-2px);
+}
+.btn-secondary {
+  border: 2px solid #fff;
+  color: #fff;
+}
+.btn-secondary:hover {
+  background: #fff;
+  color: var(--dark-blue);
+  transform: translateY(-2px);
+}
 
-        #main-header .logo {
-            font-size: 1.75rem;
-            font-weight: 800; /* Bolder logo */
-            text-decoration: none;
-            color: var(--dark-blue);
-            transition: opacity 0.3s ease;
-        }
-        
-        #main-header .logo:hover {
-            opacity: 0.8;
-        }
-        
-        #main-header .logo span {
-            color: var(--primary-color);
-        }
+/* CTA */
+#cta {
+  background: #f9fafb;
+  text-align: center;
+  padding: 5rem 1.5rem;
+}
+#cta h2 {
+  font-size: clamp(1.75rem, 3vw, 2.75rem);
+  color: var(--dark-blue);
+}
+#cta p {
+  max-width: 600px;
+  margin: 1rem auto 2rem;
+}
 
-        #main-header .nav-links {
-            list-style: none;
-            display: flex;
-        }
+/* FOOTER */
+#main-footer {
+  background: var(--text-dark);
+  color: var(--text-light);
+  text-align: center;
+  padding: 3rem 1.5rem;
+}
+.social-links {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.social-links a {
+  color: var(--text-light);
+  opacity: 0.8;
+  font-size: 1.8rem;
+  transition: 0.3s;
+}
+.social-links a:hover {
+  opacity: 1;
+  color: var(--primary-color);
+  transform: translateY(-3px);
+}
 
-        #main-header .nav-links li {
-            margin-left: 2.5rem; /* Increased spacing */
-        }
-
-        #main-header .nav-links a {
-            text-decoration: none;
-            color: var(--text-dark);
-            font-weight: 600;
-            padding-bottom: 5px;
-            position: relative;
-        }
-        
-        /* Underline hover effect */
-        #main-header .nav-links a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background-color: var(--primary-color);
-            transition: width 0.3s ease;
-        }
-        
-        #main-header .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        /* --- Hero Section --- */
-        #hero {
-            background: linear-gradient(rgba(0, 0, 100, 0.7), rgba(0, 0, 100, 0.7)), url('https://images.unsplash.com/photo-1517649763962-0c623066013b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMDUwNDZ8MHwxfHNlYXJjaHwxfHxhdGhsZXRlJTIwcnVubmluZyUyMHRyYWNrfGVufDB8fHx8MTY3ODg4MzYyMA&ixlib=rb-4.0.3&q=80&w=1080') no-repeat center center/cover;
-            min-height: 90vh; /* Use min-height */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 1.5rem;
-            color: var(--text-light);
-        }
-
-        #hero .hero-content p {
-            font-size: 1.4rem;
-            max-width: 750px; /* Wider text */
-            margin: 1.5rem 0 2.5rem;
-            font-weight: 300;
-            color: var(--text-light);
-            opacity: 0.9;
-        }
-        
-        #hero .cta-buttons .btn {
-            margin: 0 0.75rem; /* Increased margin */
-        }
-
-        /* --- Features Section --- */
-        #features {
-            background-color: var(--bg-grey);
-        }
-        
-        #features .features-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2.5rem; /* Increased gap */
-            margin-top: 4rem; /* Increased margin */
-        }
-        
-        #features .feature-card {
-            background: var(--bg-light);
-            padding: 2.5rem;
-            border-radius: 12px; /* More rounded */
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
-            border: 1px solid #e2e8f0;
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-        }
-        
-        #features .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
-            border-color: var(--primary-color);
-        }
-
-        #features .feature-card .icon {
-            font-size: 3.5rem; /* Larger icon */
-            color: var(--primary-color);
-            margin-bottom: 1.5rem;
-        }
-        
-        #features .feature-card p {
-            font-size: 1rem;
-            line-height: 1.7;
-        }
-
-        /* --- Vision Section (Corrected Cite) --- */
-        #vision {
-            background-color: var(--dark-blue);
-            color: var(--text-light);
-        }
-        
-        #vision .vision-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        
-        #vision h2 {
-            color: var(--text-light);
-        }
-        
-        #vision blockquote {
-            font-size: 1.75rem;
-            font-weight: 300;
-            font-style: italic;
-            border-left: 5px solid var(--primary-color);
-            padding-left: 2rem; /* Increased padding */
-            margin-top: 2.5rem;
-            text-align: left;
-            color: var(--text-light);
-            opacity: 0.95;
-        }
-        
-        #vision .author {
-            display: block;
-            margin-top: 1.5rem;
-            font-size: 1.1rem;
-            font-weight: 600;
-            font-style: normal;
-            text-align: right;
-            color: var(--primary-color);
-        }
-        
-        #vision .author::before {
-            content: "— "; /* Em dash for citation */
-        }
-
-        /* --- Call to Action (CTA) Section --- */
-        #cta {
-            background-color: var(--bg-grey);
-            text-align: center;
-        }
-        
-        #cta h2 {
-            margin-bottom: 1.5rem;
-        }
-        
-        #cta p {
-            max-width: 600px;
-            margin: 0 auto 2.5rem auto;
-            font-size: 1.15rem;
-        }
-
-        /* --- Footer (UPDATED) --- */
-        #main-footer {
-            background-color: var(--text-dark);
-            color: var(--text-light);
-            text-align: center;
-            padding: 4rem 1.5rem;
-        }
-
-        #main-footer .footer-content p {
-            font-size: 1rem;
-            margin-bottom: 0.5rem;
-            color: var(--text-light);
-            opacity: 0.7;
-        }
-        
-        #main-footer .footer-content p:first-child {
-            opacity: 1;
-            font-weight: 500;
-        }
-        
-        #main-footer .social-links {
-            margin-top: 2rem;
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-        }
-
-        #main-footer .social-links a {
-            color: var(--text-light);
-            text-decoration: none;
-            opacity: 0.8;
-            transition: opacity 0.3s ease, transform 0.3s ease;
-        }
-        
-        #main-footer .social-links a:hover {
-            opacity: 1;
-            transform: translateY(-3px);
-            color: var(--primary-color); /* Add hover color */
-        }
-        
-        #main-footer .social-links svg {
-            width: 28px; /* Icon size */
-            height: 28px;
-        }
-
-        /* --- Responsive (Mobile) --- */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.75rem;
-            }
-            
-            h2 {
-                font-size: 2.25rem;
-            }
-
-            #main-header {
-                position: relative; /* Allow content to flow */
-            }
-
-            #main-header .navbar {
-                flex-direction: column;
-                height: auto;
-                padding: 1.5rem 0;
-            }
-
-            #main-header .nav-links {
-                margin-top: 1.5rem;
-                flex-direction: column;
-                align-items: center;
-                gap: 1rem;
-            }
-
-            #main-header .nav-links li {
-                margin-left: 0;
-            }
-            
-            #hero {
-                min-height: 70vh;
-                padding: 6rem 1rem;
-            }
-
-            #hero .hero-content p {
-                font-size: 1.2rem;
-            }
-            
-            #hero .cta-buttons {
-                display: flex;
-                flex-direction: column;
-                gap: 1rem;
-                width: 90%;
-            }
-            
-            #hero .cta-buttons .btn {
-                margin: 0;
-            }
-
-            #features .features-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            section {
-                padding: 4rem 0;
-            }
-            
-            .container {
-                padding: 0 1rem;
-            }
-            
-            #vision blockquote {
-                font-size: 1.4rem;
-            }
-            
-            #main-footer .social-links {
-                gap: 1.25rem;
-            }
-        }
-    </style>
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .menu-toggle { display: block; }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #fff;
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid #ddd;
+  }
+  .nav-links.show { display: flex; }
+  #hero { min-height: 70vh; }
+}
+</style>
 </head>
 <body>
 
-    <!-- ======== Header ======== -->
-    <header id="main-header">
-        <nav class="navbar container">
-            <a href="#" class="logo">Bharat<span>Beyond</span>Cricket</a>
-            <ul class="nav-links">
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#vision">Our Vision</a></li>
-                <li><a href="#cta">Sign Up</a></li>
-            </ul>
-        </nav>
-    </header>
+<header id="main-header">
+  <nav class="navbar">
+    <a href="#" class="logo">Bharat<span>Beyond</span>Cricket</a>
+    <div class="menu-toggle" id="mobile-menu">☰</div>
+    <ul class="nav-links">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#cta">Join</a></li>
+      <li><a href="#main-footer">Contact</a></li>
+    </ul>
+  </nav>
+</header>
 
-    <main>
-        <!-- ======== Hero Section ======== -->
-        <section id="hero">
-            <div class="hero-content">
-                <h1>Empowering India's Athletes. <span>Beyond Cricket.</span></h1>
-                <p>
-                    A digital platform designed to recognize, empower, and financially support
-                    Indian athletes across all disciplines. We connect emerging talent with sponsors,
-                    technology, and the recognition they deserve.
-                </p>
-                <div class="cta-buttons">
-                    <a href="#features" class="btn btn-primary">Discover Talent</a>
-                    <a href="#cta" class="btn btn-secondary">Join as a Sponsor</a>
-                </div>
-            </div>
-        </section>
+<section id="hero">
+  <h1>Empowering India's Athletes. Beyond Cricket.</h1>
+  <p>A digital platform designed to recognize, empower, and financially support Indian athletes across all disciplines.</p>
+  <div>
+    <a href="#cta" class="btn btn-primary">Discover Talent</a>
+    <a href="#cta" class="btn btn-secondary">Join as a Sponsor</a>
+  </div>
+</section>
 
-        <!-- ======== Features Section ======== -->
-        <section id="features">
-            <div class="container">
-                <h2>A Platform for Growth</h2>
-                <div class="features-grid">
-                    <!-- Feature 1: Athlete Profiles -->
-                    <div class="feature-card">
-                        <div class="icon">🏆</div>
-                        <h3>Verified Athlete Profiles</h3>
-                        <p>
-                            Create a professional digital portfolio. Upload performance stats, videos,
-                            and achievements to get verified and noticed.
-                        </p>
-                    </div>
-                    
-                    <!-- Feature 2: Sponsor Discovery -->
-                    <div class="feature-card">
-                        <div class="icon">🤝</div>
-                        <h3>Sponsor & Fund</h3>
-                        <p>
-                            A transparent, data-driven ecosystem for sponsors and supporters to discover
-                            and fund promising athletes from diverse sports.
-                        </p>
-                    </div>
+<section id="cta">
+  <h2>Join the Movement</h2>
+  <p>Be a part of the change — empowering Indian athletes across every discipline.</p>
+  <a href="#" class="btn btn-primary">Get Notified</a>
+</section>
 
-                    <!-- Feature 3: AI Analytics -->
-                    <div class="feature-card">
-                        <div class="icon">📊</div>
-                        <h3>AI-Powered Analytics</h3>
-                        <p>
-                            Leverage AI-based tools for performance analysis using video and motion data,
-                            providing holistic insights for growth. (Future)
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ======== Vision Section ======== -->
-        <section id="vision">
-            <div class="container">
-                <div class="vision-content">
-                    <h2>Our Vision</h2>
-                    <blockquote>
-                        "To envision a future where every young sportsperson,
-                        regardless of discipline, gets an equal chance to succeed."
-                    </blockquote>
-                    <cite class="author">The BharatBeyondCricket Mission</cite>
-                </div>
-            </div>
-        </section>
-        
-        <!-- ======== Call to Action (CTA) Section ======== -->
-        <section id="cta">
-            <div class="container">
-                <h2>Join the Movement</h2>
-                <p>
-                    Whether you are an athlete, coach, or sponsor, be a part of the change.
-                    Our platform is launching soon.
-                </p>
-                <a href="#" class="btn btn-primary">Get Notified</a>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- ======== Footer (UPDATED) ======== -->
-    <footer id="main-footer">
-        <div class="container">
-            <div class="footer-content">
-                <!-- Name from resume -->
-                <p>&copy; 2025 BharatBeyondCricket. A project concept by Karan Gautam.</p>
-                <p>Redefining how India nurtures its sporting talent.</p>
-            </div>
-            <div class="social-links">
+<footer id="main-footer">
+  <p>&copy; 2025 BharatBeyondCricket. A project by Karan Gautam.</p>
+    <div class="social-links">
                 <!-- Links from user, with SVGs -->
                 <a href="mailto:karangautam174@gmail.com" title="Email">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M1.5 4.5H22.5V19.5H1.5V4.5ZM3 6.06V18H21V6.06L12 12.06L3 6.06ZM3.53 4.5L12 9.94L20.47 4.5H3.53Z"></path></svg>
@@ -550,8 +246,13 @@
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20ZM12.5 11.2L16.3 7.4C16.59 7.11 16.59 6.63 16.3 6.34C16.01 6.05 15.53 6.05 15.24 6.34L11.2 10.3C10.85 10.64 10.82 11.2 11.13 11.57C11.41 11.9 11.9 11.93 12.28 11.66L12.5 11.45L12.5 11.2ZM7.7 17.66C7.41 17.95 6.93 17.95 6.64 17.66C6.35 17.37 6.35 16.89 6.64 16.6L10.6 12.6C10.94 12.25 11.5 12.22 11.87 12.53C12.2 12.8 12.23 13.3 11.96 13.68L11.75 13.9L7.7 17.66Z"></M11.5 11.2L15.3 7.4C15.59 7.11 15.59 6.63 15.3 6.34C15.01 6.05 14.53 6.05 14.24 6.34L10.2 10.3C9.85 10.64 9.82 11.2 10.13 11.57C10.41 11.9 10.9 11.93 11.28 11.66L11.5 11.45L11.5 11.2ZM6.7 17.66C6.41 17.95 5.93 17.95 5.64 17.66C5.35 17.37 5.35 16.89 5.64 16.6L9.6 12.6C9.94 12.25 10.5 12.22 10.87 12.53C11.2 12.8 11.23 13.3 10.96 13.68L10.75 13.9L6.7 17.66Z"></path></svg>
                 </a>
             </div>
-        </div>
-    </footer>
+</footer>
+
+<script>
+document.getElementById('mobile-menu').addEventListener('click', () => {
+  document.querySelector('.nav-links').classList.toggle('show');
+});
+</script>
 
 </body>
 </html>
